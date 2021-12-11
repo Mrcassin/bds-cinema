@@ -98,16 +98,17 @@ public class LoginController {
 
 
 
-//        try {
-//            boolean authenticated = authService.authenticate(username, password);
-//           if (authenticated) {
-//                showPersonsView();
-//            } else {
-//                showInvalidPaswordDialog();
-//            }
-//        } catch (ResourceNotFoundException | DataAccessException e) {
-//            showInvalidPaswordDialog();
-//        }
+       try {
+            boolean authenticated = authService.authenticate(username, password);
+           if (authenticated) {
+                showPersonsView();
+            } else {
+                showInvalidPaswordDialog();
+            }
+           //todo exception
+       } catch(Exception exception) /*(ResourceNotFoundException | DataAccessException e)*/ {
+            showInvalidPaswordDialog();
+       }
     }
 
     private void showPersonsView() {
